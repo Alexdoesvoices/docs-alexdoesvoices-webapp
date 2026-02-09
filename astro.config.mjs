@@ -1,26 +1,34 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-
 import mdx from '@astrojs/mdx';
 
-// https://astro.build/config
 export default defineConfig({
-    integrations: [starlight({
-        title: 'My Docs',
-        social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-        sidebar: [
-            {
-                label: 'Guides',
-                items: [
-                    // Each item here is one entry in the navigation menu.
-                    { label: 'Example Guide', slug: 'guides/example' },
-                ],
-            },
-            {
-                label: 'Reference',
-                autogenerate: { directory: 'reference' },
-            },
-        ],
-		}), mdx()],
+  integrations: [
+    starlight({
+      title: 'My Docs',
+      // ADD THIS LINE
+      routeMiddleware: './src/routeData.ts', 
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+      sidebar: [
+        {
+         label: 'Home',
+         slug: 'home', // This points to src/content/docs/home.mdx
+        },
+        {
+          label: 'Discord Js Bot',
+          autogenerate: { directory: 'discord-js-bot/' },
+        },
+        {
+            label: 'Baldridge Bot',
+            autogenerate: {directory: 'baldridge-bot/'}
+        },
+        {
+          label: 'Reference',
+          autogenerate: { directory: 'reference' },
+        },
+      ],
+    }),
+    mdx(),
+  ],
 });
