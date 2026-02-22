@@ -1,0 +1,11 @@
+name: docs-alexdoesvoices-com
+
+services:
+  docs:
+    build: .
+    restart: always
+    environment:
+      - PORT=4321
+      - HOST=0.0.0.0
+    ports:
+      - "4321:4321" # Or keep it internal and use Caddy to proxy it

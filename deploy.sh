@@ -6,10 +6,7 @@ git clean -fd
 
 chmod +x deploy.sh
 
-bun install
-bun run build
-
-pm2 restart ecosystem.config.cjs
+docker compose up -d --build
 
 echo "Deploy Successful: $(date +'%H:%M')" | mail -v -s "Collections app rebuilt" alexdoesvoices05@gmail.com
 
