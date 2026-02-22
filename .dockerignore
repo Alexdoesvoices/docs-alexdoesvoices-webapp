@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+.svelte-kit/
+.astro/
+
+# Environment secrets (Critical for security!)
+.env
+.env.*
+!.env.example
+
+# Debugging and Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun.lockb
+.npm/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker files (Optional but cleaner)
+Dockerfile
+docker-compose.yml
+.dockerignore
