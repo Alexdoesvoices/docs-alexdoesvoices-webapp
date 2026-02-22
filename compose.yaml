@@ -5,7 +5,7 @@ services:
     build: .
     restart: always
     environment:
-      - PORT=4321
+      - PORT=7090
       - HOST=0.0.0.0
     ports:
-      - "4321:4321" # Or keep it internal and use Caddy to proxy it
+      - "7090:7090" # Or keep it internal and use Caddy to proxy it
